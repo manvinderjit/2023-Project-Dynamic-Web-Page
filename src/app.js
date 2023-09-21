@@ -18,11 +18,11 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
-    res.render('index', { layout : 'layout', title : 'Home Page' });
+    res.render('index', { layout : 'layout', title : 'Home Page', username : 'Manvinderjit', date : new Date() });
 });
 
 app.get("/menu", (req, res) => {
-    res.render('menu', { layout : 'layout', title : 'Menu Page' });
+    res.render('menu', { layout : 'layout', title : 'Menu Page', username : 'Manvinderjit' });
 });
 
 app.get("*", (req, res) => {
@@ -30,5 +30,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('Server is up at http://localhost:3000.');
+    console.log('Server is up at http://localhost:3000');
 });
